@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Roboto+Mono:wght@400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-height: 100vh;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+.container {
+    position: relative;
+}
+.topBar {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    font-family: 'Roboto Mono', monospace;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.topBar > .logo {
+    margin: 10px;
+}
+
+.topBar > .logo > p {
+    font-size: 30px;
+}
+
+.topBar > .nav {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.topBar > .nav > .circle > button{
+    width: 80px !important;
+    background-color: #cd2e2e !important;
+}
+
+.topBar > .nav > .newProject > button,
+.actionForm > button ,
+.topBar > .nav > .circle > button{
+    background-color: #2E4ACD;
+    text-align: center;
+    width: 130px;
+    height: 30px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 13px;
+    margin-right: 10px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+}
+
+.topBar > .nav > .newProject:active {
+    transform: scale(.9);
+    box-shadow: none;
+}
+
+.mainContent {
+    width: 95%;
+    margin: 70px auto;
+}
+
+.content {
+    display: flex;
+    justify-content:space-between;
+}
+
+.mainContent > .txtHeader {
+    margin: 20px 0;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 18px;
+}
+
+.mainContent > .txtHeader > p {
+    opacity: .8;
+}
+
+.content > * {
+    width: 30%;
+}
+
+.headerContent {
+    background-color: #F3F2F5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 35px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.contenLength {
+    width: 25px;
+    height: 70%;
+    border-radius:3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #000;
+}
+
+.card {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #fff;
+    width: 96%;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow:  0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all ease-in-out .18s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: none;
+}
+
+.card > .judul {
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2E4ACD;
+    height: 30px;
+    color: #fff;
+}
+
+.card > .cardContent {
+    min-height: 80px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    padding: 5px;
+}
+
+.card > .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 30px;
+}
+
+.card > .footer > .action {
+    display: flex;
+}
+
+.card > .footer > .date {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 12px;
+}
+.card > .footer > .date > .create {
+    background-color: #2E4ACD;
+    height: 22px;
+    padding: 0 5px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+
+}
+.card > .footer > .date > .deadline {
+    height: 22px;
+    padding: 0 5px;
+    background-color: #4E9F3D;
+    display: flex;
+    align-items: center;
+}
+
+.card > .footer > .action > .delete > button,
+.card > .footer > .action > .move > button{
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    background-color: transparent;
+    background-image: url(../../../asset//img/icons/delete.svg);
+    z-index: 999;
+    background-color: #fff;
+}
+
+.inProgresContent > .card > .footer > .action > .move > button {
+    background-image: url(../../../asset//img/icons/completed.svg)
+}
+
+.card > .footer > .action > .move > button {
+    background-image: url(../../../asset/img/icons/progres.svg);
+}
+
+.Formnewproject {
+    display: none;
+    position: fixed;
+    min-height: 550px;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.Formnewproject > form {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.Formnewproject > form > input {
+    width: 100%;
+    height: 35px;
+}
+
+.Formnewproject > form > textarea ,
+.Formnewproject > form > input {
+    font-family: 'PT Sans Narrow', sans-serif;
+    width: 100%;
+    font-size: 17px;
+    letter-spacing: 2px;
+    outline-style: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    margin: 10px 0 ;
+}
+
+.Formnewproject  > .actionForm {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: flex-end;
+}
+
+.actionForm > button {
+    font-family: 'Roboto Mono', monospace;
+    border: none;
+    margin: 10px 0;
+}
+
+.actionForm > button > .disable {
+    background-color: rgb(109, 73, 83) !important;
+    box-shadow:none !important;
+    cursor: not-allowed !important;
+}
+
+.Formnewproject  > .actionForm > .cancel {
+    margin-left: 10px;
+    background-color: rgb(255, 0, 0);
+}
+
+.popUp {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.65);
+    right: 240px;
+    top: 45px;
+    font-size: 10px;
+    color: #fff;
+    padding: 5px;
+    display: none;
+    border-radius: 8px 0 8px 8px;
+}
+
+.disableBtn {
+    cursor: not-allowed !important;
+}
+
