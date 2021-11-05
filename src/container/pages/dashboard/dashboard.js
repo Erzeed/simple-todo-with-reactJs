@@ -131,9 +131,10 @@ class dashboard extends Component {
             content: content,
             userId: dataUser.id
         }
+        
         if(judul !== '' && deadline !== '' && content !== '' ){
             if(this.state.btn === "Update"){
-                const succes = await this.props.updateData(this.state,step)
+                const succes = await this.props.updateData(this.state,step,dataUser.id)
                 if(succes){
                     this.setState({
                         judul:'',
@@ -329,7 +330,7 @@ const reduxReducer = (dispatch) => ({
     changePopUpHow: () => dispatch({type:"CHANGE_POPUPFORM",value: true}),
     addToApi: (data) => dispatch(saveData(data)),
     getUserData: (data) => dispatch(getData(data)),
-    updateData: (data,action) => dispatch(updateData(data, action)),
+    updateData: (data,action,id) => dispatch(updateData(data, action,id)),
     deleteData: (id,userId,type,action) => deleteData(id,userId,type,action),
     inProgres: (data,userId) => inProgres(data,userId),
     completed: (data,userId) => Completed(data,userId),

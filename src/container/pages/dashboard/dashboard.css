@@ -142,10 +142,12 @@ body {
 .card > .cardContent {
     min-height: 80px;
     font-size: 17px;
+    max-width: 100%;
     letter-spacing: 2px;
     font-family: 'PT Sans Narrow', sans-serif;
     padding: 5px;
 }
+
 
 .card > .footer {
     display: flex;

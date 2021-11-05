@@ -73,7 +73,6 @@ export const saveData = (data) => (dispatch) => {
         .catch((error => {
             dispatch({type: "SENDING_SUCCES", value: true})
             dispatch({type: "LOADING", value: false})
-            console.log(error)
             reject(false)
         }))
     })
@@ -88,11 +87,9 @@ export const inProgres = (data,userId) =>  {
             content: data.content,
             step: "inProgres"
         }).then(() => {
-            console.log('succes')
             resolve(true)
         })
         .catch((error => {
-            console.log(error)
             reject(false)
         }))
     })
@@ -107,11 +104,9 @@ export const Completed = (data,userId) =>  {
             content: data.content,
             step: "Completed"
         }).then(() => {
-            console.log('succes')
             resolve(true)
         })
         .catch((error => {
-            console.log(error)
             reject(false)
         }))
     })
@@ -177,24 +172,24 @@ export const getDataCompleted = (id) => (dispatch) => {
     })
 }
 
-export const updateData = (data,action) => (dispatch) => {
+export const updateData = (data,action,id) => (dispatch) => {
     return new Promise((resolve , reject) => {
         dispatch({type: "LOADING", value: true})
         const db = getDatabase(app)
-        const idUser = localStorage.getItem('uId')
-        set(ref(db, `users/${idUser}/${action}/${data.id}` ),{
+        set(ref(db, `users/${id}/${action}/${data.id}`),{
             judul: data.judul,
             deadline: data.deadline,
             content: data.content,
+            step:action
         }).then(() => {
             dispatch({type: "LOADING", value: false})
             dispatch({type: "SENDING_SUCCES", value: 'true'})
             resolve(true)
         })
         .catch((error => {
+            console.log(error)
             dispatch({type: "SENDING_SUCCES", value: true})
             dispatch({type: "LOADING", value: false})
-            console.log(error)
             reject(false)
         }))
     })
@@ -202,7 +197,6 @@ export const updateData = (data,action) => (dispatch) => {
 
 export const deleteData = (id,userId,type,action) =>  {
     const db = getDatabase(app)
-    console.log(userId)
     remove(ref(db, `users/${userId}/${action}/${id}` ))
     .then(() => {
         if(type !== 'move'){
