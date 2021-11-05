@@ -50,6 +50,9 @@ class login extends Component {
             }
         }
     }
+    componentDidMount(){
+        document.title = "Login"
+    }
 
     onChecked = (e) => {
         if(e.target.checked){

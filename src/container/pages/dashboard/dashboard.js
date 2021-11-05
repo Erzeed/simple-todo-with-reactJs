@@ -52,6 +52,7 @@ class dashboard extends Component {
     
     componentDidMount (){
         const dataUser = JSON.parse(localStorage.getItem('dataUser'))
+        document.title = "Dashboard"
         if(dataUser){
             this.setState({
                 ...this.state,

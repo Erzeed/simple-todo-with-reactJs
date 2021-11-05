@@ -15,6 +15,9 @@ class register extends Component {
             [e.target.id] : e.target.value
         })
     }
+    componentDidMount(){
+        document.title = "Register"
+    }
 
     onHandleSubmit = async () => {
         const {email , password} = this.state
